@@ -1,19 +1,21 @@
-There is an access log in the working directory. Analyze the log and create a JSON summary report.
+# Log Report Task
 
-Write the final report to:
+Analyze the provided access.log file and generate a JSON report.
 
-/app/report.json
+The agent must:
 
-The report must be a valid JSON file containing the required summary information from the access log.
+1. Read and parse all log entries from /app/access.log.
+2. Calculate the total number of requests.
+3. Count the number of unique client IP addresses.
+4. Identify the most frequently requested URL path.
+5. Save the final result as /app/report.json.
 
-Success criteria:
+The output file must be valid JSON with the following format:
 
-1. The output file exists at /app/report.json.
+{
+  "total_requests": <number>,
+  "unique_ips": <number>,
+  "top_path": "<path>"
+}
 
-2. The report is valid JSON.
-
-3. The report contains the total number of requests found in the access log.
-
-4. The report contains the number of unique client IP addresses found in the access log.
-
-5. The report identifies the most frequently requested path in the access log.
+The solution should handle repeated requests correctly and produce deterministic output.
