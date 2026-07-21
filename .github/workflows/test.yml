@@ -1,0 +1,22 @@
+name: Test Task
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Validate task structure
+        run: |
+          test -f task.toml
+          test -f instruction.md
+          test -f solution/solve.py
+          test -f tests/test.sh
+          test -f tests/test_outputs.py
+          echo "Task structure validated successfully"
