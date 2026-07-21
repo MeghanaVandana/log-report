@@ -1,0 +1,136 @@
+Trial log-report__Fhw5vEK failed: Docker compose command failed for environment log-report. Command: docker compose --project-name log-report__fhw5vek__env --project-directory /Users/megh/Downloads/log-report/environment -f /private/var/folders/ht/svbfqsk9077gzqpgxhjgqyww0000gn/T/tmppp1df53p/log-report__Fhw5vEK__env-docker-compose-resources.json -f /Users/megh/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-build.yaml -f /private/var/folders/ht/svbfqsk9077gzqpgxhjgqyww0000gn/T/tmppu54_26u/docker-compose-environment.json -f /private/var/folders/ht/svbfqsk9077gzqpgxhjgqyww0000gn/T/tmphdgtfwmj/docker-compose-mounts.json build. Return code: 1. Stdout: #1 [internal] load local bake definitions
+#1 reading from stdin 567B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 272B done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/python:3.13-slim-bookworm@sha256:9d7f287598e1a5a978c015ee176d8216435aaf335ed69ac3c38dd1bbb10e8d64
+#3 DONE 0.0s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 2B done
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 2B done
+#5 DONE 0.0s
+
+#6 [2/4] RUN pip install --no-cache-dir pytest==8.4.1 pytest-json-ctrf==0.3.5
+#6 CACHED
+
+#7 [3/4] WORKDIR /app
+#7 CACHED
+
+#8 [4/4] COPY environment/access.log /app/access.log
+#8 ERROR: failed to calculate checksum of ref pt7mtcukeqyv5fz7cv1dwbfhm::zy4oc9421vv0k4qql6xgahsws: "/environment/access.log": not found
+
+#9 [1/4] FROM docker.io/library/python:3.13-slim-bookworm@sha256:9d7f287598e1a5a978c015ee176d8216435aaf335ed69ac3c38dd1bbb10e8d64
+#9 resolve docker.io/library/python:3.13-slim-bookworm@sha256:9d7f287598e1a5a978c015ee176d8216435aaf335ed69ac3c38dd1bbb10e8d64 done
+#9 CANCELED
+------
+ > [4/4] COPY environment/access.log /app/access.log:
+------
+Dockerfile:7
+
+--------------------
+
+   5 |     WORKDIR /app
+
+   6 |     
+
+   7 | >>> COPY environment/access.log /app/access.log
+
+   8 |     
+
+--------------------
+
+failed to solve: failed to compute cache key: failed to calculate checksum of ref pt7mtcukeqyv5fz7cv1dwbfhm::zy4oc9421vv0k4qql6xgahsws: "/environment/access.log": not found
+
+. Stderr: None. 
+Collecting main service artifacts
+Failed to download artifact '/app/report.json' from service 'main' (best-effort)
+Traceback (most recent call last):
+  File "/Users/megh/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/trial/trial.py", line 351, in run
+    await self._prepare()
+  File "/Users/megh/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/trial/trial.py", line 385, in _prepare
+    await self._setup_agent_environment()
+  File "/Users/megh/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/trial/trial.py", line 1148, in _setup_agent_environment
+    await self._start_agent_environment()
+  File "/Users/megh/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/trial/trial.py", line 1154, in _start_agent_environment
+    await asyncio.wait_for(
+  File "/opt/anaconda3/lib/python3.12/asyncio/tasks.py", line 520, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "/Users/megh/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/environments/docker/docker.py", line 891, in start
+    await self._run_docker_compose_command(["build"])
+  File "/Users/megh/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/environments/docker/docker.py", line 656, in _run_docker_compose_command
+    raise RuntimeError(
+RuntimeError: Docker compose command failed for environment log-report. Command: docker compose --project-name log-report__fhw5vek__env --project-directory /Users/megh/Downloads/log-report/environment -f /private/var/folders/ht/svbfqsk9077gzqpgxhjgqyww0000gn/T/tmppp1df53p/log-report__Fhw5vEK__env-docker-compose-resources.json -f /Users/megh/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-build.yaml -f /private/var/folders/ht/svbfqsk9077gzqpgxhjgqyww0000gn/T/tmppu54_26u/docker-compose-environment.json -f /private/var/folders/ht/svbfqsk9077gzqpgxhjgqyww0000gn/T/tmphdgtfwmj/docker-compose-mounts.json build. Return code: 1. Stdout: #1 [internal] load local bake definitions
+#1 reading from stdin 567B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 272B done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/python:3.13-slim-bookworm@sha256:9d7f287598e1a5a978c015ee176d8216435aaf335ed69ac3c38dd1bbb10e8d64
+#3 DONE 0.0s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 2B done
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 2B done
+#5 DONE 0.0s
+
+#6 [2/4] RUN pip install --no-cache-dir pytest==8.4.1 pytest-json-ctrf==0.3.5
+#6 CACHED
+
+#7 [3/4] WORKDIR /app
+#7 CACHED
+
+#8 [4/4] COPY environment/access.log /app/access.log
+#8 ERROR: failed to calculate checksum of ref pt7mtcukeqyv5fz7cv1dwbfhm::zy4oc9421vv0k4qql6xgahsws: "/environment/access.log": not found
+
+#9 [1/4] FROM docker.io/library/python:3.13-slim-bookworm@sha256:9d7f287598e1a5a978c015ee176d8216435aaf335ed69ac3c38dd1bbb10e8d64
+#9 resolve docker.io/library/python:3.13-slim-bookworm@sha256:9d7f287598e1a5a978c015ee176d8216435aaf335ed69ac3c38dd1bbb10e8d64 done
+#9 CANCELED
+------
+ > [4/4] COPY environment/access.log /app/access.log:
+------
+Dockerfile:7
+
+--------------------
+
+   5 |     WORKDIR /app
+
+   6 |     
+
+   7 | >>> COPY environment/access.log /app/access.log
+
+   8 |     
+
+--------------------
+
+failed to solve: failed to compute cache key: failed to calculate checksum of ref pt7mtcukeqyv5fz7cv1dwbfhm::zy4oc9421vv0k4qql6xgahsws: "/environment/access.log": not found
+
+. Stderr: None. 
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/megh/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/trial/artifact_handler.py", line 330, in _download_artifact
+    await source_env.service_download_file(
+  File "/Users/megh/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/environments/docker/docker.py", line 1052, in service_download_file
+    await self.download_file(source_path, target_path)
+  File "/Users/megh/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/environments/docker/docker.py", line 1037, in download_file
+    await self._platform.download_file(source_path, target_path)
+  File "/Users/megh/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/environments/docker/docker_unix.py", line 185, in download_file
+    await self._env._run_docker_compose_command(
+  File "/Users/megh/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/environments/docker/docker.py", line 656, in _run_docker_compose_command
+    raise RuntimeError(
+RuntimeError: Docker compose command failed for environment log-report. Command: docker compose --project-name log-report__fhw5vek__env --project-directory /Users/megh/Downloads/log-report/environment -f /private/var/folders/ht/svbfqsk9077gzqpgxhjgqyww0000gn/T/tmppp1df53p/log-report__Fhw5vEK__env-docker-compose-resources.json -f /Users/megh/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/environments/docker/docker-compose-build.yaml -f /private/var/folders/ht/svbfqsk9077gzqpgxhjgqyww0000gn/T/tmppu54_26u/docker-compose-environment.json -f /private/var/folders/ht/svbfqsk9077gzqpgxhjgqyww0000gn/T/tmphdgtfwmj/docker-compose-mounts.json cp main:/app/report.json jobs/2026-07-21__14-16-31/log-report__Fhw5vEK/artifacts/app/report.json. Return code: 1. Stdout: no container found for service "main"
+. Stderr: None. 

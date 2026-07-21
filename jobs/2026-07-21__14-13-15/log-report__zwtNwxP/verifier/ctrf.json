@@ -1,0 +1,68 @@
+{
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "8.4.1"
+        },
+        "summary": {
+            "tests": 5,
+            "passed": 4,
+            "failed": 1,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1784657605.9537334,
+            "stop": 1784657605.9696372
+        },
+        "tests": [
+            {
+                "name": "test_outputs.py::test_report_exists",
+                "status": "passed",
+                "duration": 0.0003836670657619834,
+                "start": 1784657605.963182,
+                "stop": 1784657605.9637213,
+                "retries": 0,
+                "file_path": "test_outputs.py"
+            },
+            {
+                "name": "test_outputs.py::test_report_valid_json",
+                "status": "passed",
+                "duration": 0.0002679580356925726,
+                "start": 1784657605.9638162,
+                "stop": 1784657605.964173,
+                "retries": 0,
+                "file_path": "test_outputs.py"
+            },
+            {
+                "name": "test_outputs.py::test_total_requests",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 0.00038787396624684334,
+                "start": 1784657605.9642553,
+                "stop": 1784657605.9687738,
+                "retries": 0,
+                "file_path": "test_outputs.py",
+                "trace": "def test_total_requests():\n        \"\"\"Success criterion 3: The report contains the total number of requests.\"\"\"\n        with open(\"/app/report.json\") as f:\n            report = json.load(f)\n    \n>       assert report[\"total_requests\"] == 5\nE       assert 6 == 5\n\n/tests/test_outputs.py:23: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_outputs.py::test_unique_ips",
+                "status": "passed",
+                "duration": 0.00022987497504800558,
+                "start": 1784657605.9688547,
+                "stop": 1784657605.9691591,
+                "retries": 0,
+                "file_path": "test_outputs.py"
+            },
+            {
+                "name": "test_outputs.py::test_top_path",
+                "status": "passed",
+                "duration": 0.0002191259409300983,
+                "start": 1784657605.9692388,
+                "stop": 1784657605.9695284,
+                "retries": 0,
+                "file_path": "test_outputs.py"
+            }
+        ]
+    }
+}
