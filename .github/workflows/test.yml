@@ -1,0 +1,21 @@
+name: Test Task
+
+on:
+  push:
+    branches:
+      - main
+      - submission
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Run tests
+        run: |
+          cd task || cd .
+          bash tests/test.sh
